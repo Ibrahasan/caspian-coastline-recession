@@ -1,5 +1,3 @@
-
-```markdown
 # 🌊 Caspian Sea Coastline Recession Analysis (2016–2026)
 ### Hybrid Geospatial Computer Vision & Zero-Shot Foundation Model Pipeline
 
@@ -9,7 +7,7 @@
 ![Rasterio](https://img.shields.io/badge/Geospatial-Sentinel--2%20L2A-orange)
 ![Device](https://img.shields.io/badge/Inference-CPU%20Friendly-success)
 
-An end-to-end geospatial Computer Vision pipeline designed to quantify and visualize the 10-year coastline recession (2016–2026) of the **Caspian Sea along Sumqayit, Azerbaijan**. 
+An end-to-end geospatial Computer Vision pipeline designed to quantify and visualize the 10-year coastline recession (2016–2026) of the **Caspian Sea along Sumqayit, Azerbaijan**.
 
 By combining multispectral satellite physics (**Sentinel-2 L2A**), automated spectral prompt engineering (**NDWI**), zero-shot deep learning segmentation (**MobileSAM**), and Euclidean distance geometry, this project converts raw 32-bit satellite reflectance arrays into actionable physical metrics (**hectares of exposed seabed** and **meters of shoreline shift**) entirely on CPU.
 
@@ -73,29 +71,25 @@ Sentinel-2 L2A GeoTIFFs (32-bit Float: B02, B03, B04, B08)
           ├── Bitwise Change Detection: (Mask_2016 == 1) & (Mask_2026 == 0)
           ├── Morphological Gradient Shoreline Extraction
           └── Euclidean Distance Transform (L2 Norm) for Orthogonal Shift Metrics
-
 ```
 
 ### Mathematical Formulation
 
-* **Normalized Difference Water Index (Auto-Prompter):**
+**Normalized Difference Water Index (Auto-Prompter):**
 
 $$\text{NDWI} = \frac{\rho_{\text{Green (B03)}} - \rho_{\text{NIR (B08)}}}{\rho_{\text{Green (B03)}} + \rho_{\text{NIR (B08)}} + \epsilon}$$
 
-
-* **Shoreline Extraction (Morphological Gradient):**
+**Shoreline Extraction (Morphological Gradient):**
 
 $$\partial \Omega_{\text{shore}} = M - (M \ominus K_{3\times3})$$
 
-
-
 where $M \in \{0, 1\}^{H \times W}$ is the cleaned binary water mask and $\ominus$ denotes morphological erosion.
-* **Orthogonal Coastline Recession (Euclidean Distance Transform):**
+
+**Orthogonal Coastline Recession (Euclidean Distance Transform):**
+
 For every pixel $\mathbf{p} \in \partial \Omega_{2016}$, the shortest physical distance to the 2026 shoreline $\partial \Omega_{2026}$ is computed via:
 
-$$D(\mathbf{p}) = \min_{\mathbf{q} \in \partial \Omega_{2026}} \Vert{}\mathbf{p} - \mathbf{q}\Vert{}_2 \cdot \sqrt{\Delta x \cdot \Delta y}$$
-
-
+$$D(\mathbf{p}) = \min_{\mathbf{q} \in \partial \Omega_{2026}} \lVert \mathbf{p} - \mathbf{q} \rVert_2 \cdot \sqrt{\Delta x \cdot \Delta y}$$
 
 ---
 
@@ -120,7 +114,6 @@ caspian-coastline-recession/
 ├── main.py                        # End-to-end execution script
 ├── requirements.txt               # Project dependencies
 └── README.md
-
 ```
 
 ---
@@ -130,10 +123,9 @@ caspian-coastline-recession/
 ### 1. Clone the Repository & Install Dependencies
 
 ```bash
-git clone [https://github.com/Ibrahasan/caspian-coastline-recession.git](https://github.com/Ibrahasan/caspian-coastline-recession.git)
+git clone https://github.com/Ibrahasan/caspian-coastline-recession.git
 cd caspian-coastline-recession
 pip install -r requirements.txt
-
 ```
 
 ### 2. Run the End-to-End Pipeline
@@ -142,7 +134,6 @@ Executing `main.py` automatically downloads the lightweight `mobile_sam.pt` weig
 
 ```bash
 python main.py
-
 ```
 
 ---
@@ -162,5 +153,3 @@ python main.py
 *Machine Learning & Computer Vision Engineer*
 
 🔗 [GitHub Profile](https://github.com/Ibrahasan)
-
-```
