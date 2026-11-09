@@ -1,6 +1,3 @@
-Aşağıdakı mətni birbaşa kopyalayıb layihənin kök qovluğundakı `README.md` faylına yapışdıra bilərsən.
-
-Sənədləşmə beynəlxalq MLOps və Computer Vision mühəndisliyi standartlarına uyğun hazırlanıb: rekruterin ilk 5 saniyədə görməli olduğu vizual GIF və konkret rəqəmsal nəticələr ən yuxarıda, riyazi düsturlar və sistem arxitekturası isə ortada yerləşdirilib.
 
 ```markdown
 # 🌊 Caspian Sea Coastline Recession Analysis (2016–2026)
@@ -164,6 +161,6 @@ python main.py
 
 *Machine Learning & Computer Vision Engineer*
 
-🔗 [GitHub Profile](https://www.google.com/search?q=https://github.com/Ibrahasan)
+🔗 [GitHub Profile](https://github.com/Ibrahasan)
 
 ```
